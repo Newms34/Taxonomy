@@ -1,0 +1,67 @@
+[{
+    "parent": "Biota",
+    "desc": "Animals",
+    "name": "Animalia",
+    "synaps": ["Generally motile", "Generally heterotrophic", "centrioles"]
+},{
+    "parent": "Biota",
+    "desc": "Plants",
+    "name": "Plantae",
+    "synaps": ["Cholorphyll", "Generally Sessile", "Generally autotrophic"]
+},{
+    "parent": "Animalia",
+    "desc": "Animals with radial symmetry",
+    "name": "Radiata",
+    "synaps": ["Radial symmetry", "No distinct front or back", "Round"]
+},{
+    "parent": "Animalia",
+    "desc": "Animals with bilateral symmetry",
+    "name": "Bilateria",
+    "synaps": ["Distinct front", "Distinct back", "Bilateral symmetry"]
+},{
+    "parent": "Bilateria",
+    "desc": "Blastopore develops into mouth",
+    "name": "Protostomia",
+    "synaps": ["Blastopore develops into mouth"]
+},{
+    "parent": "Bilateria",
+    "desc": "Blastopore develops into anus",
+    "name": "Deuterostomia",
+    "synaps": ["Blastopore develops into anus"]
+},{
+    "parent": "Deuterostomia",
+    "desc": "Animals with a dorsal nerve chord.",
+    "name": "Chordata",
+    "synaps": ["Dorsal nerve chord"]
+},{
+    "parent": "Protostomia",
+    "desc": "Animals that shed their exoskeletons",
+    "name": "Ecdysozoa",
+    "synaps": ["Exoskeleton", "Sheds exoskeleton"]
+},{
+    "parent": "Ecdysozoa",
+    "desc": "Arthropods and their allies",
+    "name": "Panarthropoda",
+    "synaps": ["Ventral nerve chord", "Segmented legs", "Segmented body"]
+},{
+    "parent": "Panarthropoda",
+    "desc": "Insects and their allies",
+    "name": "Hexapoda",
+    "synaps": ["Six legs"]
+},{
+    "parent": "Chordata",
+    "desc": "Animals with a skull",
+    "name": "Craniata",
+    "synaps": ["Cartilage or bone skukk"]
+},{
+    "parent": "Craniata",
+    "desc": "Hagfishes",
+    "name": "Myxini",
+    "synaps": ["Skull, but no vertebral column"]
+},{
+    "parent": "Craniata",
+    "desc": "Segmented, hard backbone",
+    "name": "Vertebrata",
+    "synaps": ["backbone", "backbone is segmented", "backbone segments comprised of bone and/or cartilage"]
+}
+]

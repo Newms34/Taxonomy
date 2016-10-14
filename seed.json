@@ -1,0 +1,5 @@
+{
+	"undefined": "mongodb://localhost:27017/taxo",
+	"dev": "mongodb://localhost:27017/taxo",
+	"prod": "localhost/PROD_DB_NAME"
+}
