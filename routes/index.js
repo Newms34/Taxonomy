@@ -88,19 +88,20 @@ router.get('/allTax', function(req, res, next) {
 router.get('/tree', function(req, res, next) {
     mongoose.model('Taxa').find({}, function(err, allTxs) {
         var tObj = getTree('Biota', allTxs);
-        res.send(JSON.stringify(tObj));
+        res.send(tObj);
     })
 })
 
 router.get('/tree/:tax', function(req, res, next) {
     mongoose.model('Taxa').find({}, function(err, allTxs) {
-        var tObj = getTree(req.params.tax.initCap(), allTxs);
-        res.send(JSON.stringify(tObj));
+        var tObj = getTree(req.params.tax, allTxs);
+        console.log('tree',tObj)
+        res.send(tObj);
     })
 })
 
 router.get('/info/:tax',function(req,res,next){
-	mongoose.model('Taxa').find({name:req.params.tax.initCap()},function(err,tx){
+	mongoose.model('Taxa').find({name:req.params.tax},function(err,tx){
 		if (err) res.send(err);
 		res.send(tx);
 	})

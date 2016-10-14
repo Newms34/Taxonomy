@@ -4,12 +4,12 @@
 <head>
     <title>Taxonomic Database: Add Taxon</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body ng-app='taxa-app' ng-controller='tax-con'>
     <div class='container panel panel-success panel-body'>
-        <h3>Taxon Information</h3>
+        <h3>Add New Taxon</h3>
         <div class='row'>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="name">Name:</label>
@@ -69,11 +69,27 @@
         <br>
         <div class='row'>
             <div class="form-group">
-                <button class='btn btn-info col-md-8 col-md-offset-2' ng-click='addTaxon()' ng-disabled = '!currSynaps.length || !taxParent || !name.length || !desc.length'>Add Taxon</button>
+                <button class='btn btn-info col-md-8 col-md-offset-2' ng-click='addTaxon()' ng-disabled='!currSynaps.length || !taxParent || !name.length || !desc.length'>Add Taxon</button>
             </div>
         </div>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <div class='container panel panel-info panel-body'>
+        <h3>Draw Tree</h3>
+        <div class='row'>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="treeStart">Start:</label>
+                <div class="col-sm-6">
+                    <select name='treeStart' class='col-md-10' ng-model='treeStart'>
+                        <option ng-repeat='par in possParents' ng-value='par'>{{par}}</option>
+                    </select>
+                </div>
+                <button class='btn btn-success col-md-3' ng-click='getTree(treeStart)'>Draw</button>
+            </div>
+        </div>
+        <div class='jumbotron row' id='taxon-tree-result'>
+            
+        </div>
+    </div>
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/angular/angular.min.js"></script>
