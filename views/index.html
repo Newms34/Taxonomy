@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Taxonomic Database: Add Taxon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body ng-app='taxa-app' ng-controller='tax-con'>
+    <div class='container panel panel-success panel-body'>
+        <h3>Taxon Information</h3>
+        <div class='row'>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Name:</label>
+                <div class="col-sm-10">
+                    <input class='col-sm-10' type="text" name="name" ng-model='name' placeholder='Name of your taxon'>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class='row'>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="desc">Description:</label>
+                <div class="col-sm-10">
+                    <textarea class='col-sm-10' name="desc" ng-model='desc' placeholder='Description of your taxon'></textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class='row'>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="synaps">Synapomorphies:</label>
+                <div class="col-sm-10">
+                    <input type='text' class='col-sm-6' name="synaps" ng-model='newSynaps' placeholder='Synapomorphies for your taxon'>&nbsp;
+                    <button class='btn btn-success col-md-2 col-md-offset-2' ng-click='addSynap()'>+Add Synapomorphy</button>
+                    <table class='table table-striped'>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='syn in currSynaps'>
+                                <td>{{$index+1}}</td>
+                                <td>{{syn}}</td>
+                                <td>
+                                    <button class='btn btn-danger' ng-click='removeSynap($index);'>X</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class='row'>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="tparent">Parent:</label>
+                <div class="col-sm-10">
+                    <select name='tparent' class='col-md-10' ng-model='taxParent'>
+                        <option ng-repeat='par in possParents' ng-value='par'>{{par}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class='row'>
+            <div class="form-group">
+                <button class='btn btn-info col-md-8 col-md-offset-2' ng-click='addTaxon()' ng-disabled = '!currSynaps.length || !taxParent || !name.length || !desc.length'>Add Taxon</button>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/angular/angular.min.js"></script>
+    <script src='/js/main.js'></script>
+</body>
+
+</html>
