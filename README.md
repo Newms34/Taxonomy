@@ -4,6 +4,7 @@
  - [Purpose](#purpose)
  - [Installation and Running](#installation-and-running)
  - [Other Features](#other-features)
+ - [Remote Version](#remote-version)
  - [Credits](#credits)
 
 ##Purpose
@@ -23,6 +24,9 @@ This is a simple Taxonomy database app, written to explore the relationship betw
  - To view a specific sub-tree, go to `localhost:8080/tree/myTaxon`, where `myTaxon` is the taxon you want as the 'root' of your tree.
  - To view the info on a specific taxon, go to `localhost:8080/info/myTaxon`, where `myTaxon` is the taxon you want info on.
  - Finally, to view all taxa in raw, un-organized format, go to `localhost:8080/allTax/`
+
+#Remote Version
+There is also a remote version of this app available at davetaxonomy.herokuapp.com. The api methods are the same as for the local version, but just replace `localhost:8080` with `davetaxonomy.herokuapp.com`. Happy taxonomying! 
 
 ##Credits:
 This was written by yours truly, [David Newman](https://github.com/Newms34)
