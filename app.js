@@ -8,6 +8,7 @@ var express = require('express'),
     http = require('http');
 
 //this allows us to actually READ the contents of a POST request (i.e., the JSON)
+app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'html');
